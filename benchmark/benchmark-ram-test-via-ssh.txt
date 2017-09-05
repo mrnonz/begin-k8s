@@ -1,3 +1,5 @@
+On GCE
+
 Ram test via SSH  sysbench --test=memory --memory-block-size=1M --memory-total-size=5G run
 
 Operations performed: 5120 ( 8684.21 ops/sec)
