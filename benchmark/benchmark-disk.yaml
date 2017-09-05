@@ -1,0 +1,15 @@
+apiVersion: apps/v1beta1 # for versions before 1.6.0 use extensions/v1beta1
+kind: Deployment
+metadata:
+  name: bench-disk-deployment
+spec:
+  replicas: 8
+  template:
+    metadata:
+      labels:
+        app: bench-disk-deployment
+    spec:
+      containers:
+      - name: bench-disk-deployment
+        image: ubuntu:latest
+        command: ["sleep", "999999"]
