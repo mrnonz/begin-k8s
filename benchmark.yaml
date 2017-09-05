@@ -12,3 +12,4 @@ spec:
       containers:
       - name: benchmark
         image: exactfunctor/sysbench
+        command: ["sleep", "9999"]
