@@ -1,0 +1,62 @@
+Ram test via SSH  sysbench --test=memory --memory-block-size=1M --memory-total-size=5G run
+
+Operations performed: 5120 ( 8684.21 ops/sec)
+
+5120.00 MB transferred (8684.21 MB/sec)
+
+
+Test execution summary:
+    total time:                          0.5896s
+    total number of events:              5120
+    total time taken by event execution: 0.5887
+    per-request statistics:
+         min:                                  0.11ms
+         avg:                                  0.11ms
+         max:                                  0.61ms
+         approx.  95 percentile:               0.14ms
+
+Threads fairness:
+    events (avg/stddev):           5120.0000/0.00
+    execution time (avg/stddev):   0.5887/0.00
+
+————————————————————————
+
+Operations performed: 5120 ( 8650.02 ops/sec)
+
+5120.00 MB transferred (8650.02 MB/sec)
+
+
+Test execution summary:
+    total time:                          0.5919s
+    total number of events:              5120
+    total time taken by event execution: 0.5911
+    per-request statistics:
+         min:                                  0.11ms
+         avg:                                  0.12ms
+         max:                                  1.34ms
+         approx.  95 percentile:               0.15ms
+
+Threads fairness:
+    events (avg/stddev):           5120.0000/0.00
+    execution time (avg/stddev):   0.5911/0.00
+
+————————————————————————
+
+Operations performed: 5120 ( 8836.29 ops/sec)
+
+5120.00 MB transferred (8836.29 MB/sec)
+
+
+Test execution summary:
+    total time:                          0.5794s
+    total number of events:              5120
+    total time taken by event execution: 0.5786
+    per-request statistics:
+         min:                                  0.11ms
+         avg:                                  0.11ms
+         max:                                  0.59ms
+         approx.  95 percentile:               0.13ms
+
+Threads fairness:
+    events (avg/stddev):           5120.0000/0.00
+    execution time (avg/stddev):   0.5786/0.00
