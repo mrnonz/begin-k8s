@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: bench-disk-deployment
 spec:
-  replicas: 8
+  replicas: 1
   template:
     metadata:
       labels:
@@ -13,3 +13,10 @@ spec:
       - name: bench-disk-deployment
         image: ubuntu:latest
         command: ["tail", "-f", "/var/log/message", " ", ">" ," ", "/dev/null"]
+        volumeMounts:
+        - mountPath: "/test-ssd/"
+          name: "ssd375"
+      volumes:
+      - name: "ssd375"
+        hostPath:
+          path: "/mnt/disks/ssd0"
