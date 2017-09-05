@@ -1,0 +1,153 @@
+Random write test for IOP/s, i.e. lots of small files
+Starting 1 process
+test: Laying out IO file(s) (1 file(s) / 4096MB)
+Jobs: 1 (f=0): [w(1)] [77.8% done] [0KB/336.9MB/0KB /s] [0/86.3K/0 iops] [eta 00m:04s]
+test: (groupid=0, jobs=1): err= 0: pid=624: Tue Sep  5 11:14:42 2017
+  write: io=2842.1MB, bw=318612KB/s, iops=79625, runt=  9137msec
+  cpu          : usr=12.48%, sys=125.66%, ctx=7638, majf=0, minf=9
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=0.1%, 16=0.1%, 32=0.1%, >=64=144.1%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.1%
+     issued    : total=r=0/w=727534/d=0, short=r=0/w=0/d=0, drop=r=0/w=0/d=0
+     latency   : target=0, window=0, percentile=100.00%, depth=256
+
+Run status group 0 (all jobs):
+  WRITE: io=2842.1MB, aggrb=318611KB/s, minb=318611KB/s, maxb=318611KB/s, mint=9137msec, maxt=9137msec
+
+Disk stats (read/write):
+  sdb: ios=0/1026732, merge=0/5090, ticks=0/834092, in_queue=834468, util=98.66%
+
+------------------------------------------------------------------------------------
+Random Read test for IOP/s, i.e. lots of small files
+
+Starting 1 process
+Jobs: 1 (f=1): [r(1)] [46.2% done] [720.6MB/0KB/0KB /s] [184K/0/0 iops] [eta 00m:07s]
+test: (groupid=0, jobs=1): err= 0: pid=630: Tue Sep  5 11:15:08 2017
+  read : io=1435.2MB, bw=737023KB/s, iops=184127, runt=  1994msec
+  cpu          : usr=36.53%, sys=250.28%, ctx=7097, majf=0, minf=266
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=0.1%, 16=0.1%, 32=0.1%, >=64=285.6%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.1%
+     issued    : total=r=367151/w=0/d=0, short=r=0/w=0/d=0, drop=r=0/w=0/d=0
+     latency   : target=0, window=0, percentile=100.00%, depth=256
+
+Run status group 0 (all jobs):
+   READ: io=1435.2MB, aggrb=737023KB/s, minb=737023KB/s, maxb=737023KB/s, mint=1994msec, maxt=1994msec
+
+Disk stats (read/write):
+  sdb: ios=1032164/3, merge=0/1, ticks=956468/20, in_queue=960360, util=98.60%
+------------------------------------------------------------------------------------
+Sequential write test for IOP/s, i.e. one large file
+
+Starting 1 process
+Jobs: 1 (f=1): [W(1)] [73.3% done] [0KB/399.6MB/0KB /s] [0/102K/0 iops] [eta 00m:04s]
+test: (groupid=0, jobs=1): err= 0: pid=636: Tue Sep  5 11:15:46 2017
+  write: io=2502.4MB, bw=405971KB/s, iops=101452, runt=  6311msec
+  cpu          : usr=19.08%, sys=75.44%, ctx=40914, majf=0, minf=10
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=0.1%, 16=0.1%, 32=0.1%, >=64=163.8%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.1%
+     issued    : total=r=0/w=640266/d=0, short=r=0/w=0/d=0, drop=r=0/w=0/d=0
+     latency   : target=0, window=0, percentile=100.00%, depth=256
+
+Run status group 0 (all jobs):
+  WRITE: io=2502.4MB, aggrb=405971KB/s, minb=405971KB/s, maxb=405971KB/s, mint=6311msec, maxt=6311msec
+
+Disk stats (read/write):
+  sdb: ios=0/1035758, merge=0/2, ticks=0/2386752, in_queue=2387652, util=98.98%
+------------------------------------------------------------------------------------
+Sequential Read test for IOP/s, i.e. one large file
+
+Starting 1 process
+Jobs: 1 (f=1): [R(1)] [42.9% done] [706.1MB/0KB/0KB /s] [181K/0/0 iops] [eta 00m:08s]
+test: (groupid=0, jobs=1): err= 0: pid=642: Tue Sep  5 11:16:23 2017
+  read : io=1217.7MB, bw=635837KB/s, iops=158829, runt=  1961msec
+  cpu          : usr=33.67%, sys=227.96%, ctx=16628, majf=0, minf=266
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=0.1%, 16=0.1%, 32=0.1%, >=64=336.6%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.1%
+     issued    : total=r=311464/w=0/d=0, short=r=0/w=0/d=0, drop=r=0/w=0/d=0
+     latency   : target=0, window=0, percentile=100.00%, depth=256
+
+Run status group 0 (all jobs):
+   READ: io=1217.7MB, aggrb=635836KB/s, minb=635836KB/s, maxb=635836KB/s, mint=1961msec, maxt=1961msec
+
+Disk stats (read/write):
+  sdb: ios=1048291/0, merge=0/0, ticks=1296076/0, in_queue=1303180, util=98.03%
+------------------------------------------------------------------------------------
+Random write test for throughput, i.e. lots of small files
+
+Starting 1 process
+test: Laying out IO file(s) (1 file(s) / 10240MB)
+Jobs: 1 (f=1): [w(1)] [87.1% done] [0KB/400.0MB/0KB /s] [0/100/0 iops] [eta 00m:04s]
+test: (groupid=0, jobs=1): err= 0: pid=648: Tue Sep  5 11:17:11 2017
+  write: io=9596.0MB, bw=454837KB/s, iops=99, runt= 21604msec
+  cpu          : usr=5.48%, sys=5.81%, ctx=7437, majf=0, minf=10
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.2%, 8=0.4%, 16=0.7%, 32=1.5%, >=64=116.5%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.1%
+     issued    : total=r=0/w=2144/d=0, short=r=0/w=0/d=0, drop=r=0/w=0/d=0
+     latency   : target=0, window=0, percentile=100.00%, depth=256
+
+Run status group 0 (all jobs):
+  WRITE: io=9596.0MB, aggrb=454837KB/s, minb=454837KB/s, maxb=454837KB/s, mint=21604msec, maxt=21604msec
+
+Disk stats (read/write):
+  sdb: ios=0/81448, merge=0/150, ticks=0/12743720, in_queue=12785432, util=97.00%
+------------------------------------------------------------------------------------
+Random Read test for throughput
+
+Starting 1 process
+Jobs: 1 (f=1): [r(1)] [78.9% done] [704.0MB/0KB/0KB /s] [176/0/0 iops] [eta 00m:04s]
+test: (groupid=0, jobs=1): err= 0: pid=654: Tue Sep  5 11:18:07 2017
+  read : io=8312.0MB, bw=821493KB/s, iops=175, runt= 10361msec
+  cpu          : usr=0.15%, sys=14.83%, ctx=7043, majf=0, minf=1032
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.2%, 8=0.4%, 16=0.9%, 32=1.8%, >=64=137.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.1%
+     issued    : total=r=1823/w=0/d=0, short=r=0/w=0/d=0, drop=r=0/w=0/d=0
+     latency   : target=0, window=0, percentile=100.00%, depth=256
+
+Run status group 0 (all jobs):
+   READ: io=8312.0MB, aggrb=821492KB/s, minb=821492KB/s, maxb=821492KB/s, mint=10361msec, maxt=10361msec
+
+Disk stats (read/write):
+  sdb: ios=81567/3, merge=0/1, ticks=7167704/420, in_queue=7190288, util=99.40%
+------------------------------------------------------------------------------------
+Sequential write test for throughput, i.e. one large file
+
+Starting 1 process
+Jobs: 1 (f=1): [W(1)] [87.1% done] [0KB/368.0MB/0KB /s] [0/92/0 iops] [eta 00m:04s]
+test: (groupid=0, jobs=1): err= 0: pid=660: Tue Sep  5 11:18:53 2017
+  write: io=9596.0MB, bw=450170KB/s, iops=98, runt= 21828msec
+  cpu          : usr=6.27%, sys=4.71%, ctx=7394, majf=0, minf=11
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.2%, 8=0.4%, 16=0.7%, 32=1.5%, >=64=116.5%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.1%
+     issued    : total=r=0/w=2144/d=0, short=r=0/w=0/d=0, drop=r=0/w=0/d=0
+     latency   : target=0, window=0, percentile=100.00%, depth=256
+
+Run status group 0 (all jobs):
+  WRITE: io=9596.0MB, aggrb=450169KB/s, minb=450169KB/s, maxb=450169KB/s, mint=21828msec, maxt=21828msec
+
+Disk stats (read/write):
+  sdb: ios=0/81881, merge=0/5, ticks=0/12869256, in_queue=12877892, util=97.27%
+------------------------------------------------------------------------------------
+Sequential Read test for throughput, i.e. one large file
+
+Starting 1 process
+Jobs: 1 (f=1): [R(1)] [78.9% done] [708.0MB/0KB/0KB /s] [177/0/0 iops] [eta 00m:04s]
+test: (groupid=0, jobs=1): err= 0: pid=666: Tue Sep  5 11:19:44 2017
+  read : io=8312.0MB, bw=815199KB/s, iops=174, runt= 10441msec
+  cpu          : usr=0.15%, sys=14.33%, ctx=7473, majf=0, minf=1033
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.2%, 8=0.4%, 16=0.9%, 32=1.8%, >=64=137.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.1%
+     issued    : total=r=1823/w=0/d=0, short=r=0/w=0/d=0, drop=r=0/w=0/d=0
+     latency   : target=0, window=0, percentile=100.00%, depth=256
+
+Run status group 0 (all jobs):
+   READ: io=8312.0MB, aggrb=815198KB/s, minb=815198KB/s, maxb=815198KB/s, mint=10441msec, maxt=10441msec
+
+Disk stats (read/write):
+  sdb: ios=81892/3, merge=0/1, ticks=7208452/416, in_queue=7216096, util=99.34%
