@@ -1,0 +1,103 @@
+Benchmark disk on GKE
+
+Random write test for IOP/s, i.e. lots of small files
+Starting 1 process
+Jobs: 1 (f=1): [w(1)] [99.3% done] [0KB/3292KB/0KB /s] [0/823/0 iops] [eta 00m:09s]
+test: (groupid=0, jobs=1): err= 0: pid=768: Tue Sep  5 08:26:09 2017
+  write: io=4071.5MB, bw=3083.4KB/s, iops=770, runt=1352171msec
+  cpu          : usr=0.55%, sys=2.36%, ctx=804368, majf=0, minf=8
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=0.1%, 16=0.1%, 32=0.1%, >=64=100.6%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.1%
+     issued    : total=r=0/w=1042036/d=0, short=r=0/w=0/d=0, drop=r=0/w=0/d=0
+     latency   : target=0, window=0, percentile=100.00%, depth=256
+
+Run status group 0 (all jobs):
+  WRITE: io=4071.5MB, aggrb=3083KB/s, minb=3083KB/s, maxb=3083KB/s, mint=1352171msec, maxt=1352171msec
+
+Random Read test for IOP/s, i.e. lots of small files
+3000KB/s and limit to --> 300KB/s  eta 2h  downburst when 20mins.
+
+
+Sequential write test for IOP/s, i.e. one large file
+Starting 1 process
+test: Laying out IO file(s) (1 file(s) / 4096MB)
+Jobs: 1 (f=1): [W(1)] [87.2% done] [0KB/119.9MB/0KB /s] [0/30.7K/0 iops] [eta 00m:05s]
+test: (groupid=0, jobs=1): err= 0: pid=559: Tue Sep  5 07:44:36 2017
+  write: io=3605.4MB, bw=122879KB/s, iops=30711, runt= 30045msec
+  cpu          : usr=5.18%, sys=34.60%, ctx=128782, majf=0, minf=9
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=0.1%, 16=0.1%, 32=0.1%, >=64=113.6%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.1%
+     issued    : total=r=0/w=922722/d=0, short=r=0/w=0/d=0, drop=r=0/w=0/d=0
+     latency   : target=0, window=0, percentile=100.00%, depth=256
+
+Run status group 0 (all jobs):
+  WRITE: io=3605.4MB, aggrb=122879KB/s, minb=122879KB/s, maxb=122879KB/s, mint=30045msec, maxt=30045msec
+
+
+Sequential Read test for IOP/s, i.e. one large file
+Starting 1 process
+test: Laying out IO file(s) (1 file(s) / 4096MB)
+Jobs: 1 (f=1): [R(1)] [97.1% done] [41196KB/0KB/0KB /s] [10.3K/0/0 iops] [eta 00m:03s]
+test: (groupid=0, jobs=1): err= 0: pid=557: Tue Sep  5 07:46:25 2017
+  read : io=3958.3MB, bw=41554KB/s, iops=10385, runt= 97543msec
+  cpu          : usr=2.81%, sys=19.34%, ctx=560517, majf=0, minf=265
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=0.1%, 16=0.1%, 32=0.1%, >=64=103.5%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.1%
+     issued    : total=r=1013059/w=0/d=0, short=r=0/w=0/d=0, drop=r=0/w=0/d=0
+     latency   : target=0, window=0, percentile=100.00%, depth=256
+
+Run status group 0 (all jobs):
+   READ: io=3958.3MB, aggrb=41553KB/s, minb=41553KB/s, maxb=41553KB/s, mint=97543msec, maxt=97543msec
+
+Random write test for throughput, i.e. lots of small files
+Starting 1 process
+test: Laying out IO file(s) (1 file(s) / 10240MB)
+Jobs: 1 (f=1): [w(1)] [90.7% done] [0KB/0KB/0KB /s] [0/0/0 iops] [eta 00m:09s]
+test: (groupid=0, jobs=1): err= 0: pid=558: Tue Sep  5 07:45:41 2017
+  write: io=10236MB, bw=130296KB/s, iops=28, runt= 80445msec
+  cpu          : usr=1.04%, sys=1.39%, ctx=3159, majf=0, minf=8
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.2%, 8=0.3%, 16=0.7%, 32=1.4%, >=64=108.4%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.1%
+     issued    : total=r=0/w=2304/d=0, short=r=0/w=0/d=0, drop=r=0/w=0/d=0
+     latency   : target=0, window=0, percentile=100.00%, depth=256
+
+Run status group 0 (all jobs):
+  WRITE: io=10236MB, aggrb=130296KB/s, minb=130296KB/s, maxb=130296KB/s, mint=80445msec, maxt=80445msec
+
+Random Read test for throughput
+
+Sequential write test for throughput, i.e. one large file
+Starting 1 process
+test: Laying out IO file(s) (1 file(s) / 10240MB)
+Jobs: 1 (f=0): [/(1)] [-.-% done] [0KB/0KB/0KB /s] [0/0/0 iops] [eta 00m:00s]
+Jobs: 1 (f=1): [W(1)] [91.5% done] [0KB/0KB/0KB /s] [0/0/0 iops] [eta 00m:08s]
+test: (groupid=0, jobs=1): err= 0: pid=558: Tue Sep  5 07:45:51 2017
+  write: io=10236MB, bw=132826KB/s, iops=29, runt= 78913msec
+  cpu          : usr=0.99%, sys=1.45%, ctx=3138, majf=0, minf=9
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.2%, 8=0.3%, 16=0.7%, 32=1.4%, >=64=108.4%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.1%
+     issued    : total=r=0/w=2304/d=0, short=r=0/w=0/d=0, drop=r=0/w=0/d=0
+     latency   : target=0, window=0, percentile=100.00%, depth=256
+
+Run status group 0 (all jobs):
+  WRITE: io=10236MB, aggrb=132825KB/s, minb=132825KB/s, maxb=132825KB/s, mint=78913msec, maxt=78913msec
+
+Sequential Read test for throughput, i.e. one large file
+Starting 1 process
+Jobs: 1 (f=1): [R(1)] [91.4% done] [0KB/0KB/0KB /s] [0/0/0 iops] [eta 00m:08s]
+test: (groupid=0, jobs=1): err= 0: pid=760: Tue Sep  5 08:17:19 2017
+  read : io=10236MB, bw=132649KB/s, iops=29, runt= 79018msec
+  cpu          : usr=0.08%, sys=1.76%, ctx=5225, majf=0, minf=1033
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.2%, 8=0.3%, 16=0.7%, 32=1.4%, >=64=108.4%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.1%
+     issued    : total=r=2304/w=0/d=0, short=r=0/w=0/d=0, drop=r=0/w=0/d=0
+     latency   : target=0, window=0, percentile=100.00%, depth=256
+
+Run status group 0 (all jobs):
+   READ: io=10236MB, aggrb=132649KB/s, minb=132649KB/s, maxb=132649KB/s, mint=79018msec, maxt=79018msec
